@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build:sample": "esbuild sample.ts --bundle --outfile=build/sample.js",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "pub": "yarn build && npm publish --access public"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.3",
