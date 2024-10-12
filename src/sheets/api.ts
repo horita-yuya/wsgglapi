@@ -11,7 +11,7 @@ export async function getSpreadsheetValues(
     range,
   }: { spreadsheetId: string; sheet: string; range: SheetRange },
   init?: RequestInit,
-) {
+): Promise<{ range: string; values: string[][] }> {
   const value = `${sheet}!${range}`;
   const response = await fetch(`${url}/${spreadsheetId}/values/${value}`, init);
   return await response.json();
