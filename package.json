@@ -1,6 +1,6 @@
 {
   "name": "wsgglapi",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "index.js",
   "type": "module",
   "license": "MIT",
@@ -23,13 +23,13 @@
         "default": "./dist/index.js"
       }
     },
-    "./auth": {
-      "import": "./dist/auth/index.js",
-      "types": "./dist/auth/index.d.ts"
+    "./auth/*": {
+      "import": "./dist/auth/*.js",
+      "types": "./dist/auth/*.d.ts"
     },
-    "./sheets": {
-      "import": "./dist/sheets/index.js",
-      "types": "./dist/sheets/index.d.ts"
+    "./sheets/*": {
+      "import": "./dist/sheets/*.js",
+      "types": "./dist/sheets/*.d.ts"
     }
   }
 }
