@@ -12,15 +12,14 @@ type SpreadsheetProperties = {
 
 export type SheetRowData = {
   values: Array<{
-    userEnteredValue:
+    userEnteredValue?:
       | { stringValue: string }
       | { numberValue: string }
-      | { formulaValue: string }
-      | undefined;
-    effectiveValue:
+      | { formulaValue: string };
+    effectiveValue?:
       | { stringValue: string; numberValue?: never }
-      | { numberValue: string; stringValue?: never }
-      | undefined;
+      | { numberValue: string; stringValue?: never };
+    formattedValue?: string;
     userEnteredFormat:
       | {
           backgroundColor:
