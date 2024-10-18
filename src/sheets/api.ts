@@ -1,6 +1,6 @@
 // https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/get
 
-import type { SheetRange } from "./types";
+import type { SheetRange, Spreadsheet } from "./types";
 
 const url = "https://sheets.googleapis.com/v4/spreadsheets";
 
@@ -17,10 +17,7 @@ export async function getSpreadsheet(
     includeGridData?: boolean;
   },
   init?: RequestInit,
-): Promise<{
-  spreadsheetId: string;
-  sheets: string[];
-}> {
+): Promise<Spreadsheet> {
   const ranges = `${sheet}!${range}`;
   const search = new URLSearchParams({
     ranges,

@@ -10,10 +10,34 @@ type SpreadsheetProperties = {
   timeZone: string;
 };
 
+export type SheetRowData = {
+  values: Array<{
+    userEnteredValue:
+      | { stringValue: string }
+      | { numberValue: string }
+      | { formulaValue: string }
+      | undefined;
+    effectiveValue:
+      | { stringValue: string; numberValue?: never }
+      | { numberValue: string; stringValue?: never }
+      | undefined;
+    userEnteredFormat:
+      | {
+          backgroundColor:
+            | { red: number; green: number; blue: number }
+            | undefined;
+        }
+      | undefined;
+  }>;
+};
+
 export type Sheet = {
   sheetId: number;
   title: string;
   index: number;
+  data: Array<{
+    rowData: Array<SheetRowData>;
+  }>;
 } & SheetGrid;
 
 type SheetGrid = {
