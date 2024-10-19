@@ -76,5 +76,6 @@ type Alphabet =
   | "X"
   | "Y"
   | "Z";
-type SheetCell = `${Alphabet}${number}`;
+
+type SheetCell = `${Alphabet}${number}` | `A${Alphabet}${number}`;
 export type SheetRange = `${SheetCell}:${SheetCell}`;
